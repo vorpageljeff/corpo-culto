@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Corpo Culto — conceito de catálogo inteligente</title>
+  <meta name="description" content="Protótipo visual de catálogo integrado ao WhatsApp para a Corpo Culto Suplementos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="demo-bar"><strong>Conceito visual</strong><span>Protótipo demonstrativo — produtos, preços e condições são fictícios.</span></div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Corpo Culto, início"><span class="brand-mark">C</span><span><b>CORPO CULTO</b><small>SUPLEMENTOS</small></span></a>
+    <nav aria-label="Navegação principal"><a href="#catalogo">Produtos</a><a href="#como-funciona">Como comprar</a><a href="#loja">A loja</a></nav>
+    <a class="header-action" href="#pedido">Meu pedido <span id="header-count">0</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">Seu objetivo. Sua escolha. Seu ritmo.</span>
+        <h1>Encontre o suplemento <em>certo para sua rotina.</em></h1>
+        <p>Filtre por categoria, marca, sabor e faixa de preço. Escolha seus produtos e envie o pedido organizado para o atendimento da Corpo Culto.</p>
+        <div class="hero-actions"><a class="button primary" href="#catalogo">Explorar catálogo</a><a class="button secondary" href="#como-funciona">Veja como funciona</a></div>
+        <div class="hero-trust"><span>✓ Atendimento humano</span><span>✓ Retirada ou entrega</span><span>✓ Pedido pelo WhatsApp</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Composição ilustrativa de suplementos"><div class="glow"></div><img src="assets/suplementos-conceito.png" alt="Embalagens demonstrativas de suplementos em preto e laranja" /></div>
+    </section>
+
+    <section class="benefits" aria-label="Diferenciais do catálogo"><div><strong>28 mil+</strong><span>pessoas acompanham a marca</span></div><div><strong>Rápido</strong><span>produto e variação já escolhidos</span></div><div><strong>Próximo</strong><span>atendimento continua no WhatsApp</span></div></section>
+
+    <section class="catalog" id="catalogo">
+      <div class="section-heading"><div><span class="eyebrow">Catálogo inteligente</span><h2>Escolha do seu jeito.</h2></div><p>O cliente encontra o que procura sem percorrer dezenas de publicações ou repetir todas as informações no atendimento.</p></div>
+      <div class="filter-panel" aria-label="Filtros do catálogo">
+        <label>Buscar produto<input id="search" type="search" placeholder="Ex.: creatina, whey, coqueteleira" /></label>
+        <label>Categoria<select id="category"><option value="all">Todas</option><option value="proteina">Proteínas</option><option value="creatina">Creatina</option><option value="energia">Energia</option><option value="acessorio">Acessórios</option></select></label>
+        <label>Faixa de preço<select id="price"><option value="all">Todos os preços</option><option value="100">Até R$ 100</option><option value="200">Até R$ 200</option><option value="201">Acima de R$ 200</option></select></label>
+        <label>Ordenar<select id="order"><option value="featured">Destaques</option><option value="low">Menor preço</option><option value="high">Maior preço</option></select></label>
+      </div>
+      <div class="quick-filters" aria-label="Filtros rápidos"><button class="active" data-quick="all">Todos</button><button data-quick="proteina">Proteínas</button><button data-quick="creatina">Creatina</button><button data-quick="energia">Pré-treino</button><button data-quick="acessorio">Acessórios</button></div>
+      <div class="catalog-meta"><span><b id="result-count">6</b> produtos encontrados</span><small>Estoque e valores demonstrativos</small></div>
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="how" id="como-funciona">
+      <div class="section-heading"><div><span class="eyebrow">Do catálogo ao atendimento</span><h2>Três passos. Sem atrito.</h2></div></div>
+      <div class="steps"><article><span>01</span><h3>Filtre e encontre</h3><p>Escolha categoria, marca, sabor, tamanho e preço.</p></article><article><span>02</span><h3>Monte o pedido</h3><p>Adicione os itens e indique retirada ou entrega.</p></article><article><span>03</span><h3>Envie ao WhatsApp</h3><p>A equipe recebe o resumo pronto e confirma disponibilidade e pagamento.</p></article></div>
+    </section>
+
+    <section class="order-section" id="pedido">
+      <div class="order-copy"><span class="eyebrow">Seu pedido</span><h2>Chegue ao atendimento com tudo escolhido.</h2><p>O catálogo organiza a intenção de compra. O relacionamento e a orientação continuam com a equipe da Corpo Culto.</p></div>
+      <div class="order-card">
+        <div class="order-header"><div><small>Resumo</small><strong id="order-title">Nenhum produto selecionado</strong></div><button id="clear-order" type="button">Limpar</button></div>
+        <div id="order-items" class="order-items"><p class="empty">Escolha um produto no catálogo para visualizar o pedido.</p></div>
+        <fieldset><legend>Como prefere receber?</legend><label><input type="radio" name="delivery" value="Retirada na loja" checked /> Retirada na loja</label><label><input type="radio" name="delivery" value="Entrega em Toledo" /> Entrega em Toledo</label></fieldset>
+        <label class="address">Endereço para entrega<input id="address" type="text" placeholder="Rua, número e bairro" disabled /></label>
+        <div class="order-total"><span>Total estimado</span><strong id="total">R$ 0,00</strong></div>
+        <button class="whatsapp-button" id="whatsapp" type="button">Enviar pedido organizado no WhatsApp</button>
+        <small class="order-note">Nesta demonstração, o botão apenas exibe uma prévia e não envia mensagens.</small>
+      </div>
+    </section>
+
+    <section class="store" id="loja"><div><span class="eyebrow">Corpo Culto Suplementos</span><h2>Atendimento forte, agora com uma vitrine à altura.</h2><p>Uma presença própria para organizar produtos, promoções e lançamentos, sem perder a proximidade que já funciona no WhatsApp.</p></div><div class="store-card"><span>Toledo — PR</span><strong>Seg–Sex 08h–22h</strong><small>Sáb 08h–19h · Dom 12h–20h</small></div></section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark">C</span><span><b>CORPO CULTO</b><small>SUPLEMENTOS</small></span></div><p>Conceito visual preparado pela Voragon. Não representa uma loja oficial em operação.</p></footer>
+  <dialog id="preview"><button class="close" aria-label="Fechar">×</button><span>Prévia da mensagem</span><pre id="message-preview"></pre><button class="button primary close-action">Entendi</button></dialog>
+  <script src="script.js"></script>
+</body>
+</html>

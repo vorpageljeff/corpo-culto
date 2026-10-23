@@ -1,0 +1,12 @@
+{
+  "data": "2026-10-23",
+  "origem": "Voragon_Comercial/prototipos/corpo-culto",
+  "arquivos_incluidos": 6,
+  "exclusoes": [
+    {
+      "path": "apresentacao-corpo-culto.mp4",
+      "reason": "runtime/private/generated format"
+    }
+  ],
+  "nota": "Publicação de acervo. Credenciais, dados operacionais, sessões e backups não foram incluídos. Não é release de produção."
+}
